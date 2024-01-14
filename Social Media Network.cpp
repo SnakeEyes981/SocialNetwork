@@ -18,7 +18,7 @@ struct Node{
 // Functions START
 
 
-void loginMenu(){
+void mainMenu(){
 	cout << "|=============================================================|" << endl;
 	cout << "|                           1. Login                          |" << endl;
 	cout << "|                           2. Sign-up                        |" << endl;
@@ -74,13 +74,22 @@ class SocialMedia{
 		}
 };
 
+void signUpMenu(){
+	cout << "SignUp";
+}
+void loginMenu(){
+	cout << "Login";
+}
+void doNothing(){
+	return;
+}
 int main(){
 	int choice;
 	while(true){
-		loginMenu();
+		mainMenu();
 		cin >> choice;
-		cout << choice == 1 ? "Login";
-		cout << choice == 2 ? "Signup";
-		cout << choice == 3 ? return 0 : 
+		choice == 1 ? loginMenu() : doNothing();
+		choice == 2 ? signUpMenu() : doNothing();
+		if (choice == 3)	return 0;
 	}
 }
